@@ -51,10 +51,10 @@ public class ShotLocationMap {
                 int x = 0;
                 int y = 0;
                 if (j>6) {
-                    x = Math.abs(j -14);
+                    x = 7 - Math.abs(7-j);
                     y = i;
                 } else {
-                    x = j +1;
+                    x = 7 - j + 7;
                     y = i;
                 }
                 Point mirroredXY = new Point(x, y);
@@ -115,10 +115,10 @@ public class ShotLocationMap {
                 int x = 0;
                 int y = 0;
                 if (j>9) {
-                    x = Math.abs(j -20);
+                    x = 10 - Math.abs(10 - j);
                     y = i + 1;
                 } else {
-                    x = j +1;
+                    x = 10 - j + 11;
                     y = i + 1;
                 }
                 Point mirroredXY = new Point(x, y);
@@ -132,7 +132,7 @@ public class ShotLocationMap {
                     {
                         // display/center the jdialog when the button is pressed
 //                        JDialog d = new JDialog(frame, "x:" +mirroredXY.x +"y:"+mirroredXY.y, true);
-                        System.out.println("something about xy" + xy);
+                        System.out.println("something about xy" + mirroredXY);
                         gShotPoints.add(xy);
                         gShotPoints.add(mirroredXY);
 //                        d.setLocationRelativeTo(frame);
@@ -174,10 +174,10 @@ public class ShotLocationMap {
                 int x = 0;
                 int y = 0;
                 if (j>3) {
-                    x = Math.abs(j -8);
+                    x = 4 - Math.abs(4 - j);
                     y = i;
                 } else {
-                    x = j +1;
+                    x = 4 - j + 4;
                     y = i;
                 }
                 Point mirroredXY = new Point(x, y);

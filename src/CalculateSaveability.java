@@ -60,14 +60,21 @@ public class CalculateSaveability {
 //        return "Courtois";
 //        return "Hart";
 //        return "Lloris";
-//        return "Schmeichel";
+        return "Schmeichel";
 //        return "Forster";
 //        return "Pope";
 //        return "Degea";
 //        return "Leno";
-        return "Ederson";
+//        return "Ederson";
 //        return "Butland";
 //        return "Gomez";
 //        return "Fabianski";
+//        return "Begovic";
+//        return "Hennessey";
+//        return "Karnezis";
+//        return "Ryan";
+//        return "Lossl";
+//        return "Foster";
+//        return "Pickford";
     }
 }
