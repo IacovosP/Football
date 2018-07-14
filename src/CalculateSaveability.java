@@ -9,6 +9,7 @@ public class CalculateSaveability {
         GoalGrid goalGrid = new GoalGrid();
         ShotLocationMap shotLoc = new ShotLocationMap();
         shotPower power = new shotPower();
+        Saved saved = new Saved();
         insertTable updateTable = new insertTable();
         try {
             shotLoc.initUI();
@@ -37,14 +38,25 @@ public class CalculateSaveability {
         power.frame.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                try {
+                    saved.initUI();
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        saved.frame.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent windowEvent) {
                 System.out.println("are are here ");
-                updateTable.addShotToTable("keeper", goalGrid.gPoints, shotLoc.gShotPoints, power.shotPower);
+                updateTable.addShotToTable(keeperName, goalGrid.gPoints, shotLoc.gShotPoints, saved.saved, power.shotPower);
             }
         });
     }
 
     private static String getKeeperName() {
-        return "Karius";
+//       return "Karius";
 //        return "Courtois";
 //        return "Hart";
 //        return "Lloris";
@@ -53,7 +65,7 @@ public class CalculateSaveability {
 //        return "Pope";
 //        return "Degea";
 //        return "Leno";
-//        return "Ederson";
+        return "Ederson";
 //        return "Butland";
 //        return "Gomez";
 //        return "Fabianski";

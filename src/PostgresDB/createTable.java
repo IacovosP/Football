@@ -30,6 +30,7 @@ public class createTable {
                     "MIR_SHOT_Y         INT     NOT NULL, " +
                     "MIR_GOAL_X         INT     NOT NULL, " +
                     "MIR_GOAL_Y         INT     NOT NULL, " +
+                    "SAVED              INT     NOT NULL, " +
                     " POWER             INT     NOT NULL)";
             stmt.executeUpdate(sql);
             stmt.close();

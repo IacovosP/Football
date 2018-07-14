@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class insertTable {
-    public void addShotToTable(String keeperName, ArrayList<Point> goalPoints, ArrayList<Point> shotPoints, int power) {
+    public void addShotToTable(String keeperName, ArrayList<Point> goalPoints, ArrayList<Point> shotPoints, int saved, int power) {
         Connection c = null;
         Statement stmt = null;
         int shot_x = shotPoints.get(0).x;
@@ -30,8 +30,8 @@ public class insertTable {
             System.out.println("Opened database successfully");
 
 //            stmt = c.createStatement();
-            PreparedStatement st = c.prepareStatement("INSERT INTO SHOT_LOCATION (NAME,SHOT_X,SHOT_Y,GOAL_X, GOAL_Y, MIR_SHOT_X, MIR_SHOT_Y, MIR_GOAL_X, MIR_GOAL_Y, POWER)" +
-                    " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement st = c.prepareStatement("INSERT INTO SHOT_LOCATION (NAME,SHOT_X,SHOT_Y,GOAL_X, GOAL_Y, MIR_SHOT_X, MIR_SHOT_Y, MIR_GOAL_X, MIR_GOAL_Y, SAVED, POWER)" +
+                    " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             st.setString(1, keeper);
             st.setInt(2, shot_x);
             st.setInt(3, shot_y);
@@ -41,7 +41,8 @@ public class insertTable {
             st.setInt(7, mir_shot_y);
             st.setInt(8, mir_goal_x);
             st.setInt(9, mir_goal_y);
-            st.setInt(10, sPower);
+            st.setInt(10, saved);
+            st.setInt(11, sPower);
             st.executeUpdate();
             st.close();
 //            String sql = "INSERT INTO SHOT_LOCATION (NAME,SHOT_X,SHOT_Y,GOAL_X, GOAL_Y, MIR_SHOT_X, MIR_SHOT_Y, MIR_GOAL_X, MIR_GOAL_Y, POWER) "
