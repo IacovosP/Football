@@ -60,7 +60,7 @@ public class CalculateSaveability {
 //        return "Courtois";
 //        return "Hart";
 //        return "Lloris";
-        return "Schmeichel";
+//        return "Schmeichel";
 //        return "Forster";
 //        return "Pope";
 //        return "Degea";
@@ -74,7 +74,7 @@ public class CalculateSaveability {
 //        return "Karnezis";
 //        return "Ryan";
 //        return "Lossl";
-//        return "Foster";
+        return "Foster";
 //        return "Pickford";
     }
 }
