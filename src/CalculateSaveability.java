@@ -64,17 +64,30 @@ public class CalculateSaveability {
 //        return "Forster";
 //        return "Pope";
 //        return "Degea";
+//        return "Romero";
 //        return "Leno";
 //        return "Ederson";
 //        return "Butland";
-//        return "Gomez";
+//        return "Gomes";
 //        return "Fabianski";
 //        return "Begovic";
 //        return "Hennessey";
 //        return "Karnezis";
-//        return "Ryan";
+        return "Ryan";
+//        return "Adrian";
 //        return "Lossl";
-        return "Foster";
+//        return "Foster";
 //        return "Pickford";
+//        return "Darlow";
+//        return "Cech";
+//        return "Ospina";
+//        return "Elliot";
+//        return "Mignolet";
+//        return "Jakupovic";
+//        return "McCarthy";
+//        return "Bravo";
+//        return "Dubravka";
+//        return "Speroni";
+//        return "Grant";
     }
 }

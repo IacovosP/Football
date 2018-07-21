@@ -11,10 +11,10 @@ public class selectTable {
     public static void main( String args[] ) {
         Connection c = null;
         Statement stmt = null;
-        int qShot_x = 9;
-        int qShot_y = 2;
-        int qGoal_x = 3;
-        int qGoal_y = 3;
+        int qShot_x = 8;
+        int qShot_y = 5;
+        int qGoal_x = 4;
+        int qGoal_y = 4;
         try {
             Class.forName("org.postgresql.Driver");
             c = DriverManager
@@ -25,23 +25,24 @@ public class selectTable {
 
             stmt = c.createStatement();
             PreparedStatement st = c.prepareStatement("SELECT * FROM SHOT_LOCATION " +
-                    "WHERE ((shot_x = ? AND shot_y = ?) OR (mir_shot_x = ? AND mir_shot_y = ?))" +
+                    "WHERE ((shot_x = ? AND shot_y = ?) " +
                     "AND (((goal_x = ? OR goal_x = ? OR goal_x = ?) AND goal_y = ?)" +
-                    "OR ((goal_y = ? OR goal_y = ? OR goal_y = ?) AND goal_x = ?)" +
-                    "OR ((mir_goal_x = ? OR mir_goal_x = ? OR mir_goal_x = ?) AND mir_goal_y = ?)" +
-                    "OR ((mir_goal_y = ? OR mir_goal_y = ? OR mir_goal_y = ?) AND mir_goal_x = ?))");
+                    "OR  (( goal_y = ? OR goal_y = ? OR goal_y = ?) AND goal_x = ?)))" +
+                    "OR  ((  mir_shot_x = ? AND mir_shot_y = ?)" +
+                    "AND (((mir_goal_x = ? OR mir_goal_x = ? OR mir_goal_x = ?) AND mir_goal_y = ?)" +
+                    "OR   ((mir_goal_y = ? OR mir_goal_y = ? +1 OR mir_goal_y = ?) AND mir_goal_x = ?)))");
             st.setInt(1, qShot_x);
             st.setInt(2, qShot_y);
-            st.setInt(3, qShot_x);
-            st.setInt(4, qShot_y);
-            st.setInt(5, qGoal_x);
-            st.setInt(6, qGoal_x + 1);
-            st.setInt(7, qGoal_x -1);
-            st.setInt(8, qGoal_y);
-            st.setInt(9, qGoal_y + 1);
-            st.setInt(10, qGoal_y - 1);
-            st.setInt(11, qGoal_y);
-            st.setInt(12, qGoal_x);
+            st.setInt(3, qGoal_x);
+            st.setInt(4, qGoal_x + 1);
+            st.setInt(5, qGoal_x -1);
+            st.setInt(6, qGoal_y);
+            st.setInt(7, qGoal_y + 1);
+            st.setInt(8, qGoal_y - 1);
+            st.setInt(9, qGoal_y);
+            st.setInt(10, qGoal_x);
+            st.setInt(11, qShot_x);
+            st.setInt(12, qShot_y);
             st.setInt(13, qGoal_x);
             st.setInt(14, qGoal_x + 1);
             st.setInt(15, qGoal_x - 1);
