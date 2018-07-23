@@ -12,8 +12,8 @@ public class selectTable {
         Connection c = null;
         Statement stmt = null;
         int qShot_x = 8;
-        int qShot_y = 5;
-        int qGoal_x = 4;
+        int qShot_y = 4;
+        int qGoal_x = 12;
         int qGoal_y = 4;
         try {
             Class.forName("org.postgresql.Driver");
