@@ -87,8 +87,8 @@ public class CalculateSaveability {
 //        return "Karnezis";
 //        return "Ryan";
 //        return "Adrian";
-        return "Lossl";
-//        return "Foster";
+//        return "Lossl";
+        return "Foster";
 //        return "Pickford";
 //        return "Darlow";
 //        return "Cech";
@@ -101,5 +101,6 @@ public class CalculateSaveability {
 //        return "Dubravka";
 //        return "Speroni";
 //        return "Grant";
+//        return "Gazzaniga";
     }
 }

@@ -1,4 +1,4 @@
-package PostgresDB;
+package AngleAndDistance;
 
 import java.awt.*;
 import java.sql.*;
@@ -27,33 +27,7 @@ public class selectTable {
             System.out.println("Opened database successfully");
 
             stmt = c.createStatement();
-            PreparedStatement st = c.prepareStatement("SELECT * FROM SHOT_LOCATION " +
-                    "WHERE ((shot_x = ? AND shot_y = ?) " +
-                    "AND (((goal_x = ? OR goal_x = ? OR goal_x = ?) AND goal_y = ?)" +
-                    "OR  (( goal_y = ? OR goal_y = ? OR goal_y = ?) AND goal_x = ?)))" +
-                    "OR  ((  mir_shot_x = ? AND mir_shot_y = ?)" +
-                    "AND (((mir_goal_x = ? OR mir_goal_x = ? OR mir_goal_x = ?) AND mir_goal_y = ?)" +
-                    "OR   ((mir_goal_y = ? OR mir_goal_y = ? +1 OR mir_goal_y = ?) AND mir_goal_x = ?)))");
-            st.setInt(1, qShot_x);
-            st.setInt(2, qShot_y);
-            st.setInt(3, qGoal_x);
-            st.setInt(4, qGoal_x + 1);
-            st.setInt(5, qGoal_x -1);
-            st.setInt(6, qGoal_y);
-            st.setInt(7, qGoal_y + 1);
-            st.setInt(8, qGoal_y - 1);
-            st.setInt(9, qGoal_y);
-            st.setInt(10, qGoal_x);
-            st.setInt(11, qShot_x);
-            st.setInt(12, qShot_y);
-            st.setInt(13, qGoal_x);
-            st.setInt(14, qGoal_x + 1);
-            st.setInt(15, qGoal_x - 1);
-            st.setInt(16, qGoal_y);
-            st.setInt(17, qGoal_y + 1);
-            st.setInt(18, qGoal_y - 1);
-            st.setInt(19, qGoal_y);
-            st.setInt(20, qGoal_x);
+            PreparedStatement st = c.prepareStatement("SELECT * FROM SHOT_LOCATION");
 
             ResultSet rs = st.executeQuery();
 //            ResultSet rs = stmt.executeQuery( "SELECT * FROM SHOT_LOCATION " +
