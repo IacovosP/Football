@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class insertTable {
-    public static void addShotToTable(double distanceFromGoal, double angleFromGoal, double difGoalCentreGoalLoc, int goalY, int saved, int power) {
+    public static void addShotToTable(double distanceFromGoal, double angleFromGoal, double angleFromShotLocationOnGoal, double difGoalCentreGoalLoc, int goalY, int saved, int power) {
         Connection c = null;
         Statement stmt = null;
 
@@ -22,14 +22,15 @@ public class insertTable {
             System.out.println("Opened database successfully");
 
 //            stmt = c.createStatement();
-            PreparedStatement st = c.prepareStatement("INSERT INTO ANGLE_DISTANCE (distance_From_Goal,angle_From_Goal,dif_Goal_Centre_from_Goal_Loc, goalY, saved, power)" +
-                    " VALUES (?, ?, ?, ?, ?, ?)");
+            PreparedStatement st = c.prepareStatement("INSERT INTO ANGLE_DISTANCE (distance_From_Goal,angle_From_Goal, angle_From_Shot_Location_On_Goal, dif_Goal_Centre_from_Goal_Loc, goal_Y, saved, power)" +
+                    " VALUES (?, ?, ?, ?, ?, ?, ?)");
             st.setFloat(1, (float) distanceFromGoal);
             st.setFloat(2, (float) angleFromGoal);
-            st.setFloat(3,(float) difGoalCentreGoalLoc);
-            st.setInt(4, goalY);
-            st.setInt(5, saved);
-            st.setInt(6, power);
+            st.setFloat(3, (float) angleFromShotLocationOnGoal);
+            st.setFloat(4,(float) difGoalCentreGoalLoc);
+            st.setInt(5, goalY);
+            st.setInt(6, saved);
+            st.setInt(7, power);
             st.executeUpdate();
             st.close();
             c.commit();

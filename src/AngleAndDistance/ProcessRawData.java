@@ -29,7 +29,7 @@ public class ProcessRawData {
             double angleFromGoal = calculateAngle(shot_x, shot_y);
             double angleFromShotLocationOnGoal = calculateAngleFromGoalLoc(shot_x, shot_y, goal_x);
             double difGoalCentreGoalLoc = calculateDistanceOfGoalLocations(goal_x);
-//            insertTable.addShotToTable(distanceFromGoal,angleFromGoal,difGoalCentreGoalLoc,goal_y,saved,power);
+            insertTable.addShotToTable(distanceFromGoal,angleFromGoal, angleFromShotLocationOnGoal, difGoalCentreGoalLoc,goal_y,saved,power);
             i++;
         }
         System.out.println("MY I: " + i);

@@ -1,4 +1,4 @@
-package AngleAndDistance;
+package shooterForm;
 
 import java.sql.*;
 
@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 
 
-public class createTable {
+public class createShooterTable {
     public static void main( String args[] ) {
         Connection c = null;
         Statement stmt = null;
@@ -19,15 +19,12 @@ public class createTable {
             System.out.println("Opened database successfully");
 
             stmt = c.createStatement();
-            String sql = "CREATE TABLE ANGLE_DISTANCE " +
-                    "(ID            SERIAL    PRIMARY KEY, " +
-                    "distance_From_Goal                 FLOAT     NOT NULL, " +
-                    "angle_From_Goal                    FLOAT     NOT NULL, " +
-                    "angle_From_Shot_Location_On_Goal   FLOAT     NOT NULL, " +
-                    "dif_Goal_Centre_from_Goal_Loc      FLOAT     NOT NULL, " +
-                    "goal_Y                             INT     NOT NULL, " +
-                    "saved                              INT     NOT NULL, " +
-                    " POWER                             INT     NOT NULL)";
+            String sql = "CREATE TABLE SHOOTER " +
+                    "(ID                        SERIAL      PRIMARY KEY, " +
+                    "shooter                    TEXT        NOT NULL, " +
+                    "shot_time                  INT         NOT NULL, " +
+                    "game_id                    SERIAL      NOT NULL, " +
+                    "shot_id                    SERIAL      NOT NULL)";
             stmt.executeUpdate(sql);
             stmt.close();
             c.close();
