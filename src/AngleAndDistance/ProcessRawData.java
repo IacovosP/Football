@@ -29,10 +29,37 @@ public class ProcessRawData {
             double angleFromGoal = calculateAngle(shot_x, shot_y);
             double angleFromShotLocationOnGoal = calculateAngleFromGoalLoc(shot_x, shot_y, goal_x);
             double difGoalCentreGoalLoc = calculateDistanceOfGoalLocations(goal_x);
-            insertTable.addShotToTable(distanceFromGoal,angleFromGoal, angleFromShotLocationOnGoal, difGoalCentreGoalLoc,goal_y,saved,power);
+//            insertTable.addShotToTable(distanceFromGoal,angleFromGoal, angleFromShotLocationOnGoal, difGoalCentreGoalLoc,goal_y,saved,power);
             i++;
         }
         System.out.println("MY I: " + i);
+    }
+
+    public static Map processRawData(ArrayList<Map> shotData) {
+        Map analysisReadyData = new HashMap<>();
+        int i = 0;
+        for (Map shot : shotData) {
+            int shot_x = (int) shot.get(SHOT_X);
+            int shot_y = (int) shot.get(SHOT_Y);
+            int goal_x = (int) shot.get(GOAL_X);
+            int goal_y = (int) shot.get(GOAL_Y);
+            int saved = (int) shot.get(SAVED);
+            int power = (int) shot.get(POWER);
+            double distanceFromGoal = calculateDistance(shot_x, shot_y, goal_x);
+            double angleFromGoal = calculateAngle(shot_x, shot_y);
+            double angleFromShotLocationOnGoal = calculateAngleFromGoalLoc(shot_x, shot_y, goal_x);
+            double difGoalCentreGoalLoc = calculateDistanceOfGoalLocations(goal_x);
+            analysisReadyData.put("DX_FROM_GOAL" , distanceFromGoal);
+            analysisReadyData.put("ANGLE_FROM_SHOT_LOCATION_ON_GOAL", angleFromShotLocationOnGoal);
+            analysisReadyData.put("ANGLE_FROM_GOAL", angleFromGoal);
+            analysisReadyData.put("DX_GOAL_CENTRE_GOAL_LOC", difGoalCentreGoalLoc);
+            analysisReadyData.put("GOAL_Y", goal_y);
+            analysisReadyData.put("SAVED", saved);
+            analysisReadyData.put("POWER", power);
+            i++;
+        }
+        System.out.println("MY I: " + i);
+        return analysisReadyData;
     }
 
     private static double calculateDistanceOfGoalLocations(int goal_x) {
