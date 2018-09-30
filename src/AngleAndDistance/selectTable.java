@@ -27,7 +27,7 @@ public class selectTable {
             System.out.println("Opened database successfully");
 
             stmt = c.createStatement();
-            PreparedStatement st = c.prepareStatement("SELECT * FROM SHOT_LOCATION WHERE ID =517");
+            PreparedStatement st = c.prepareStatement("SELECT * FROM SHOT_LOCATION WHERE ID > 514");
 
             ResultSet rs = st.executeQuery();
 //            ResultSet rs = stmt.executeQuery( "SELECT * FROM SHOT_LOCATION " +

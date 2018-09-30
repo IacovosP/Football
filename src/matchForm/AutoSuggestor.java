@@ -11,7 +11,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-class AutoSuggestor {
+public class AutoSuggestor {
 
     private final JTextField textField;
     private final Window container;
@@ -244,7 +244,7 @@ class AutoSuggestor {
         dictionary.add(word);
     }
 
-    boolean wordTyped(String typedWord) {
+    public boolean wordTyped(String typedWord) {
 
         if (typedWord.isEmpty()) {
             return false;

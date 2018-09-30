@@ -44,6 +44,7 @@ public class selectShotDataInferredFromShooter {
 
                 System.out.println();
                 Map shotData = new HashMap<>();
+                shotData.put("keeper", keeperName);
                 shotData.put("shotX", shot_x);
                 shotData.put("shotY", shot_y);
                 shotData.put("goalX", goal_x);

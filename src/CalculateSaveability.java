@@ -59,7 +59,9 @@ public class CalculateSaveability {
             insertShooterTable updateShooterTable,
             int gameId
     ) {
-        String keeperName = getKeeperName();
+        String keeperName = shooter.keeper;
+        System.out.println("Keeper : " + shooter.keeper);
+
         match.frame.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosed(java.awt.event.WindowEvent windowEvent) {
@@ -130,7 +132,7 @@ public class CalculateSaveability {
                     @Override
                     public void windowClosed(java.awt.event.WindowEvent windowEvent) {
                         System.out.println("are are here ");
-                        updateTable.addShotToTable(keeperName, keeperLoc.keeperPoints, goalGrid.gPoints, shotLoc.gShotPoints, saved.saved, power.shotPower);
+                        updateTable.addShotToTable(shooter.keeper, keeperLoc.keeperPoints, goalGrid.gPoints, shotLoc.gShotPoints, saved.saved, power.shotPower);
                         try {
                             updateShooterTable.addShooterToTable(shooter.shooter, shooter.shot_time, updateTable.id, updateForm.id);
                         } catch (ParseException e) {
@@ -158,7 +160,8 @@ public class CalculateSaveability {
             matchForm match = new matchForm();
             shooterForm shooter = new shooterForm();
             insertShooterTable updateShooterTable = new insertShooterTable();
-            String keeperName = getKeeperName();
+            String keeperName = shooter.keeper;
+            System.out.println("Keeper : " + shooter.keeper);
 
             try {
                 shooter.initUI();
@@ -221,7 +224,7 @@ public class CalculateSaveability {
                 @Override
                 public void windowClosed(java.awt.event.WindowEvent windowEvent) {
                     System.out.println("are are here ");
-                    updateTable.addShotToTable(keeperName, keeperLoc.keeperPoints, goalGrid.gPoints, shotLoc.gShotPoints, saved.saved, power.shotPower);
+                    updateTable.addShotToTable(shooter.keeper, keeperLoc.keeperPoints, goalGrid.gPoints, shotLoc.gShotPoints, saved.saved, power.shotPower);
                     try {
                         updateShooterTable.addShooterToTable(shooter.shooter, shooter.shot_time, updateTable.id, gameId);
                     } catch (ParseException e) {
@@ -234,8 +237,6 @@ public class CalculateSaveability {
         }
 
     private static String getKeeperName() {
-//       return "Karius";
-//        return "Courtois";
 //        return "Hart";
 //        return "Lloris";
 //        return "Schmeichel";
@@ -244,7 +245,7 @@ public class CalculateSaveability {
 //        return "Degea";
 //        return "Romero";
 //        return "Leno";
-        return "Ederson";
+//        return "Ederson";
 //        return "Butland";
 //        return "Gomes";
 //        return "Fabianski";
@@ -264,9 +265,10 @@ public class CalculateSaveability {
 //        return "Jakupovic";
 //        return "McCarthy";
 //        return "Bravo";
-//        return "Dubravka";
+        return "Dubravka";
 //        return "Speroni";
 //        return "Grant";
 //        return "Gazzaniga";
+//        return "Hamer";
     }
 }

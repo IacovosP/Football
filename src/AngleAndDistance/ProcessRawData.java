@@ -15,6 +15,7 @@ public class ProcessRawData {
     private static String SAVED = "saved";
     private static String POWER = "power";
 
+    // run this to get all shot_location data into angle and distance table
     public static void main(String[] args) {
         ArrayList<Map> shotData = selectTable.getData();
         int i = 0;
@@ -29,7 +30,7 @@ public class ProcessRawData {
             double angleFromGoal = calculateAngle(shot_x, shot_y);
             double angleFromShotLocationOnGoal = calculateAngleFromGoalLoc(shot_x, shot_y, goal_x);
             double difGoalCentreGoalLoc = calculateDistanceOfGoalLocations(goal_x);
-//            insertTable.addShotToTable(distanceFromGoal,angleFromGoal, angleFromShotLocationOnGoal, difGoalCentreGoalLoc,goal_y,saved,power);
+            insertTable.addShotToTable(distanceFromGoal,angleFromGoal, angleFromShotLocationOnGoal, difGoalCentreGoalLoc,goal_y,saved,power);
             i++;
         }
         System.out.println("MY I: " + i);
@@ -45,6 +46,7 @@ public class ProcessRawData {
             int goal_y = (int) shot.get(GOAL_Y);
             int saved = (int) shot.get(SAVED);
             int power = (int) shot.get(POWER);
+            String keeper = (String) shot.get("keeper");
             double distanceFromGoal = calculateDistance(shot_x, shot_y, goal_x);
             double angleFromGoal = calculateAngle(shot_x, shot_y);
             double angleFromShotLocationOnGoal = calculateAngleFromGoalLoc(shot_x, shot_y, goal_x);
@@ -56,6 +58,7 @@ public class ProcessRawData {
             analysisReadyData.put("GOAL_Y", goal_y);
             analysisReadyData.put("SAVED", saved);
             analysisReadyData.put("POWER", power);
+            analysisReadyData.put("KEEPER", keeper);
             i++;
         }
         System.out.println("MY I: " + i);

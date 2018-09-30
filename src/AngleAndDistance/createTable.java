@@ -19,7 +19,7 @@ public class createTable {
             System.out.println("Opened database successfully");
 
             stmt = c.createStatement();
-            String sql = "CREATE TABLE ANGLE_DISTANCE " +
+            String sql = "CREATE TABLE ANGLE_DISTANCE2 " +
                     "(ID            SERIAL    PRIMARY KEY, " +
                     "distance_From_Goal                 FLOAT     NOT NULL, " +
                     "angle_From_Goal                    FLOAT     NOT NULL, " +

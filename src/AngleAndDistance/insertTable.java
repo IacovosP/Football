@@ -22,7 +22,7 @@ public class insertTable {
             System.out.println("Opened database successfully");
 
 //            stmt = c.createStatement();
-            PreparedStatement st = c.prepareStatement("INSERT INTO ANGLE_DISTANCE (distance_From_Goal,angle_From_Goal, angle_From_Shot_Location_On_Goal, dif_Goal_Centre_from_Goal_Loc, goal_Y, saved, power)" +
+            PreparedStatement st = c.prepareStatement("INSERT INTO ANGLE_DISTANCE2 (distance_From_Goal,angle_From_Goal, angle_From_Shot_Location_On_Goal, dif_Goal_Centre_from_Goal_Loc, goal_Y, saved, power)" +
                     " VALUES (?, ?, ?, ?, ?, ?, ?)");
             st.setFloat(1, (float) distanceFromGoal);
             st.setFloat(2, (float) angleFromGoal);

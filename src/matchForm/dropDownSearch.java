@@ -22,7 +22,7 @@ public class dropDownSearch {
 
         AutoSuggestor autoSuggestor = new AutoSuggestor(f, frame, null, Color.WHITE.brighter(), Color.BLUE, Color.RED, 0.75f) {
             @Override
-            boolean wordTyped(String typedWord) {
+            public boolean wordTyped(String typedWord) {
 
                 //create list for dictionary this in your case might be done via calling a method which queries db and returns results as arraylist
                 ArrayList<String> words = new ArrayList<>();
